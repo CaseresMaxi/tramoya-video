@@ -1,0 +1,238 @@
+{
+  "rev": 1793134184581,
+  "v": {
+    "escenas": [
+      {
+        "activa": true,
+        "tipo": "portada",
+        "mantener": 6,
+        "kicker": "Una skill para tu agente",
+        "titulo": "Tra*moya*",
+        "subtitulo": "Presentaciones, videos e imágenes de tu proyecto: las hace tu agente y las editás vos, en el navegador.",
+        "autores": "Qué es y cómo se usa",
+        "contexto": "Video explicativo · hecho con Tramoya",
+        "imagen": "../proyecto/assets/img/escenario.webp",
+        "notas": "Tramoya es una skill: algo que se le instala a un agente como Claude Code o Codex para que sepa hacer todas las piezas de comunicación de un proyecto. Este video está hecho con Tramoya."
+      },
+      {
+        "activa": true,
+        "tipo": "texto",
+        "mantener": 9,
+        "kicker": "El problema",
+        "titulo": "Contar un proyecto lleva *más que hacerlo*.",
+        "puntos": "Una presentación, un video, un póster, una landing y un logo: cinco herramientas distintas.\nCada cambio hay que repetirlo en todas.\nUn agente puede generarlas, pero el resultado queda cerrado: no lo podés tocar.",
+        "notas": "El dolor: cada pieza en su programa, nada se habla con nada, y lo que genera una IA es un archivo final que no se puede retocar."
+      },
+      {
+        "activa": true,
+        "tipo": "tarjetas",
+        "mantener": 10,
+        "kicker": "Qué hace",
+        "titulo": "Un proyecto, *cinco piezas*, los mismos datos.",
+        "items": "Presentación | Se reproduce como un video: puntos clave, cámara y transiciones.\nReel | Corto, a tempo, con música generada. Sale en MP4.\nPóster | A1 a A4 a 300 dpi y PDF para imprenta.\nLanding | Una página para publicar, en un solo archivo.\nMarca | Logo con variantes, en SVG y PNG.\nTodas con editor | Lo que generó el agente lo retocás vos.",
+        "notas": "Todo sale de los mismos datos: si cambia el nombre o el color, cambia en todas las piezas. Y cada una se abre con su editor."
+      },
+      {
+        "activa": true,
+        "tipo": "flujo",
+        "mantener": 12,
+        "kicker": "Cómo funciona",
+        "titulo": "Ida y vuelta *con el agente*.",
+        "bloques": "Pedís | En palabras | «Haceme una presentación»\nPedís | Con un estilo | De la galería o desde una referencia\nEl agente | Escribe los datos | Textos, escenas, marca\nEl agente | Mira el resultado | Chrome headless, cuadro por cuadro\nVos | Editás | En el estudio, en el navegador\nVos | Marcás correcciones | Sobre el punto exacto\nEl agente | Lee y corrige | tramoya estado\nEl agente | Exporta | MP4, PNG, PDF, SVG",
+        "nota": "Lo que editás queda en archivos del proyecto: el agente lo lee y sigue desde ahí.",
+        "notas": "El corazón de Tramoya: no es un generador de un tiro. Vos y el agente trabajan sobre los mismos archivos."
+      },
+      {
+        "activa": true,
+        "tipo": "codigo",
+        "mantener": 11,
+        "kicker": "Empezar",
+        "titulo": "Un comando y *a desarrollar*.",
+        "cuerpo": "En la carpeta de tu proyecto. Crea ./tramoya, instala la skill y abre el estudio en el navegador.",
+        "tabla": "Paso | Qué pasa\n1 · Abrir una terminal | En tu repo, con Node 18+\n2 · iniciar | Proyecto + estudio\n3 · Pedirle al agente | O editar a mano",
+        "codigo": "# todo en un paso\nnpx github:CaseresMaxi/tramoya iniciar\n\n# o instalar la skill en tus agentes\ngit clone https://github.com/CaseresMaxi/tramoya\nbash tramoya/instalar.sh",
+        "nota": "El instalador encuentra Claude Code, Codex, Cursor, Gemini y OpenCode. Las veces siguientes: doble clic en «Abrir estudio».",
+        "notas": "Tres pasos. El instalador deja la skill enlazada: un git pull la actualiza."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "El estudio",
+        "titulo": "Tus proyectos, *en el navegador*.",
+        "imagen": "../proyecto/assets/img/cap-inicio.webp",
+        "url": "127.0.0.1:4321",
+        "marcas": "24 | 32 | Creá un proyecto nuevo con nombre y estilo.\n43 | 30 | Cada proyecto, con su miniatura y lo pendiente.\n83 | 13 | Traé uno de otra máquina arrastrando el .zip.",
+        "notas": "tramoya estudio abre esto: el lugar de trabajo para cualquier persona, sepa o no programar."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 9,
+        "kicker": "El tablero",
+        "titulo": "Todo el proyecto *en un lugar*.",
+        "imagen": "../proyecto/assets/img/cap-tablero.webp",
+        "url": "127.0.0.1:4321/p/tramoya/",
+        "marcas": "6 | 16 | Piezas, estilo, pedidos, código, salidas y llevar.\n27 | 30 | Cada pieza con su miniatura viva y su editor.\n7 | 92 | Lo que editás se guarda en el proyecto, solo.",
+        "notas": "El tablero de cada proyecto. El indicador de abajo dice dónde quedó lo editado."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 9,
+        "kicker": "Estilos",
+        "titulo": "Ningún estilo por defecto: *una galería*.",
+        "imagen": "../proyecto/assets/img/cap-galeria.webp",
+        "url": "tramoya/estilos/",
+        "marcas": "10 | 23 | Diez estilos: suizo, brutalista, editorial, terminal, neón, cine…\n20 | 45 | Cada uno con sus tipografías, temas, ritmo y música.\n6.5 | 86 | Un clic para elegirlo; antes, probalo en cualquier pieza.",
+        "notas": "El estilo es el look completo: no solo colores, también tipografía, forma, movimiento y la banda del reel. El contenido no cambia."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 9,
+        "kicker": "Estilos",
+        "titulo": "¿Ninguno te sirve? *Pedilo con referencias*.",
+        "imagen": "../proyecto/assets/img/cap-pedir.webp",
+        "url": "tramoya/estilos/#pedir",
+        "marcas": "28 | 26 | Pegá el prompt o la descripción de otro motion graphic.\n28 | 52 | Sumá links y capturas de referencia.\n76 | 26 | El agente lo convierte en un estilo nuevo del proyecto.",
+        "notas": "Un prompt de otro video, un link de Vimeo, capturas: el agente lo traduce a paleta, tipografías, ritmo y sonido, y aparece en la galería."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 9,
+        "kicker": "Presentación",
+        "titulo": "Se presenta *como un video*.",
+        "imagen": "../proyecto/assets/img/cap-motion-editor.webp",
+        "url": "tramoya/motion/",
+        "marcas": "25 | 35 | El escenario: cada escena viaja a la siguiente.\n87 | 25 | El editor (E): escenas, textos, imágenes y movimiento.\n36 | 92 | Puntos clave: → avanza, ← rebobina, la barra recorre cuadro a cuadro.",
+        "notas": "Cada escena viaja a la siguiente: los títulos y los puntos se transforman en vez de cortarse."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "Presentación",
+        "titulo": "Corregí *sobre el punto exacto*.",
+        "imagen": "../proyecto/assets/img/cap-motion-correcciones.webp",
+        "url": "tramoya/motion/?escena=3",
+        "marcas": "62 | 95 | Corregir (C): un clic donde está el problema.\n80 | 40 | Cada corrección guarda escena, paso, elemento y punto.\n55 | 22 | El agente abre ese cuadro, lo arregla y la marca hecha.",
+        "notas": "No hace falta describir dónde: la corrección lleva las coordenadas."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 9,
+        "kicker": "Reel",
+        "titulo": "Una línea de tiempo *que se arrastra*.",
+        "imagen": "../proyecto/assets/img/cap-reel-editor.webp",
+        "url": "tramoya/reel/?editor",
+        "marcas": "30 | 84 | Partes como bloques: arrastrá para mover o cambiar la duración.\n86 | 30 | Los campos de cada parte y la banda: tempo, acordes, bombo.\n35 | 32 | Todo a tempo: cada corte cae en un pulso.",
+        "notas": "El reel tiene música generada en código, así que el video sale siempre sincronizado."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "Landing",
+        "titulo": "Escribí *sobre la página*.",
+        "imagen": "../proyecto/assets/img/cap-landing-editor.webp",
+        "url": "tramoya/landing/",
+        "marcas": "37 | 42 | Los textos se editan en el lugar.\n93 | 73 | Secciones: reordenar, agregar, duplicar, borrar.\n81 | 80 | Descargar HTML: un archivo listo para publicar.",
+        "notas": "Quien visita la landing publicada no ve nada del editor."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "Póster y marca",
+        "titulo": "Para imprimir, *a 300 dpi*.",
+        "imagen": "../proyecto/assets/img/cap-poster.webp",
+        "url": "tramoya/poster/",
+        "marcas": "41 | 45 | El póster, con las mismas fotos, textos y marca.\n86 | 35 | Panel de parámetros: textos, encuadre, tamaños, tema.\n94 | 3 | Observaciones (O) sobre el póster, para el agente.",
+        "notas": "Toda la serie A tiene la misma proporción: A1, A3 o A4 son el mismo diseño a otra escala."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "Hablarle al agente",
+        "titulo": "Pedidos, *sin salir del navegador*.",
+        "imagen": "../proyecto/assets/img/cap-pedidos.webp",
+        "url": "tramoya/#pedidos",
+        "marcas": "30 | 37 | Escribí qué querés, con links e imágenes.\n81 | 33 | Pendientes y hechos: pedidos, correcciones, observaciones.\n26 | 11 | El agente los lee con tramoya estado.",
+        "notas": "Un buzón entre vos y el agente, guardado en el proyecto."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "Para quien programa",
+        "titulo": "El código, *también en el navegador*.",
+        "imagen": "../proyecto/assets/img/cap-codigo.webp",
+        "url": "tramoya/#codigo",
+        "marcas": "20 | 12 | Los archivos del proyecto.\n42 | 55 | Editor con resaltado; revisa la sintaxis antes de guardar.\n84 | 40 | La vista previa se recarga al guardar.",
+        "notas": "Sin instalar nada más: funciona sin internet."
+      },
+      {
+        "activa": true,
+        "tipo": "captura",
+        "mantener": 8,
+        "kicker": "Exportar",
+        "titulo": "Video, PNG y PDF *con un botón*.",
+        "imagen": "../proyecto/assets/img/cap-salidas.webp",
+        "url": "tramoya/#salidas",
+        "marcas": "24 | 31 | Revisar, video, póster, marca o paquete.\n30 | 74 | Lo exportado, para mirar y descargar.\n91 | 10 | Si falta Chrome o ffmpeg, te dice cómo instalarlo.",
+        "notas": "Se renderiza con Chrome en segundo plano, con el mismo código que se ve en pantalla."
+      },
+      {
+        "activa": true,
+        "tipo": "columnas",
+        "mantener": 10,
+        "kicker": "Guardar y llevar",
+        "titulo": "Tu trabajo es *una carpeta*.",
+        "izqTitulo": "Se guarda solo",
+        "izq": "Cada cambio va a proyecto/estado/, en archivos.\nSe versiona con git como cualquier código.\nEl agente lo lee y sigue desde ahí.",
+        "derTitulo": "Se lleva a cualquier lado",
+        "der": "Un .zip que se abre con doble clic, sin instalar nada.\nimportar lo trae a otro repo.\nCada proyecto lleva su propia copia de la herramienta.",
+        "monitorTitulo": "tramoya empaquetar",
+        "monitor": "▸ proyecto/proyecto.js\n▸ proyecto/escenas.js\n▸ proyecto/estado/motion.json\n▸ proyecto/estilo/ (fuentes)\n▸ motor + estudio\n▸ listo: mi-proyecto.zip · 2,1 MB",
+        "notas": "Nada queda atrapado en un navegador ni en una cuenta."
+      },
+      {
+        "activa": true,
+        "tipo": "cierre",
+        "mantener": 12,
+        "kicker": "Para empezar",
+        "titulo": "Pedile *tu primera pieza*.",
+        "puntos": "npx github:CaseresMaxi/tramoya iniciar\nElegí un estilo en la galería (o pedilo con referencias).\n«Haceme una presentación sobre este proyecto.»",
+        "final": "Pedí. Editá. Llevalo.",
+        "autores": "github.com/CaseresMaxi/tramoya",
+        "contexto": "Hecho con Tramoya",
+        "notas": "Cierre: el camino de tres pasos y la invitación."
+      }
+    ],
+    "estilo": {
+      "tema": "negro",
+      "logo": "tema",
+      "transicion": "franjas",
+      "desenfoque": false,
+      "velocidad": 1.15,
+      "grano": false,
+      "cromo": true,
+      "pie": "Tramoya · video explicativo",
+      "duracion": 1,
+      "recorrido": 1,
+      "entrada": "escalon",
+      "ritmo": 0.75,
+      "distancia": 1,
+      "franjas": {
+        "n": 2,
+        "color": "tinta",
+        "grosor": 1.7
+      },
+      "estiloBase": "brutalista"
+    }
+  }
+}

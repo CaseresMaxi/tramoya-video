@@ -1,0 +1,6 @@
+node_modules/
+salida/revision/
+# El video va como descarga del release (pesa ~50 MB): no se versiona
+salida/*.mp4
+salida/.*.mp4
+.DS_Store
