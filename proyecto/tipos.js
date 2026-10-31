@@ -52,6 +52,43 @@
       },
     },
 
+    // La cámara entra a la captura: cada avance se acerca a una zona y la nombra ahí mismo
+    // (para pantallas donde importa dónde está cada cosa, no una lista al costado)
+    recorrido: {
+      nombre: 'Recorrido por una pantalla', pasos: 'uno',
+      campos: [['kicker', 'text', 'Antetítulo'], ['titulo', 'area', 'Título'], ['imagen', 'image', 'Captura (16:9)'],
+        ['zonas', 'lines', 'Zonas: "x | y | texto" por línea (x e y en % de la captura)'], ['zoom', 'number', 'Acercamiento (1.4 a 2.2)']],
+      ejemplo: { kicker: 'Pantalla', titulo: 'Recorrela.', zonas: '20 | 30 | Acá\n70 | 60 | Y acá', zoom: 1.7 },
+      css: `
+        .rc-frame{position:absolute; left:310px; top:280px; width:1300px; height:765px; border-radius:16px; overflow:hidden; background:var(--panel); border:1px solid var(--line); box-shadow:0 30px 80px rgba(0,0,0,.45)}
+        .rc-bar{height:34px; display:flex; align-items:center; gap:8px; padding:0 16px; background:var(--panel-2); border-bottom:1px solid var(--line)}
+        .rc-bar i{width:11px; height:11px; border-radius:50%; background:var(--line)}
+        .rc-frame img{display:block; width:1300px; height:731px; object-fit:cover; object-position:top}
+        .rc-ring{position:absolute; width:70px; height:70px; margin:-35px 0 0 -35px; border-radius:50%; border:5px solid var(--accent)}
+        .rc-tag{position:absolute; max-width:330px; padding:10px 16px; background:var(--accent); color:var(--bg); font:700 21px/1.3 var(--font-body)}`,
+      geo(d) {
+        const z = Math.min(2.4, Math.max(1.2, +d.zoom || 1.7)), F = { x: 310, y: 314, w: 1300, h: 731 };
+        const Z = lines(d.zonas).map((l) => { const [x, y, ...t] = l.split('|').map((s) => s.trim()); return { X: F.x + ((+x || 0) / 100) * F.w, Y: F.y + ((+y || 0) / 100) * F.h, t: t.join(' | ') }; });
+        return { z, F, Z };
+      },
+      focos(d) {
+        const { z, F, Z } = window.TIPOS_PROYECTO.recorrido.geo(d), hw = 960 / z, hh = 540 / z;
+        const c = (v, a, b) => Math.min(Math.max(v, a), b);
+        return [{ x: 960, y: 540, s: 1 }, ...Z.map((m) => ({ x: c(m.X, F.x + hw - 120, F.x + F.w - hw + 120), y: c(m.Y, F.y + hh - 120, F.y + F.h - hh + 60), s: z }))];
+      },
+      render(d) {
+        const { Z } = window.TIPOS_PROYECTO.recorrido.geo(d), n = Z.length;
+        return `
+        <div class="pad">${kicker(d)}${titulo(d, 0.12, 'md wide')}</div>
+        <div class="rc-frame" data-f="imagen" data-k="hero" data-shape="box" data-m="zoom" data-at=".3" data-dur="1"><div class="rc-bar"><i></i><i></i><i></i></div><img src="${esc(d.imagen)}" alt=""></div>
+        ${Z.map((m, i) => {
+          const izq = m.X > 1250, out = i < n - 1 ? `data-out="${i + 2}"` : '';
+          return `<div class="rc-ring" style="left:${m.X}px; top:${m.Y}px" data-m="pop" data-s="${i + 1}" data-at=".9" data-e="latir" ${out}></div>
+          <div class="rc-tag" data-f="zonas" style="${izq ? `right:${1920 - m.X + 50}px` : `left:${m.X + 50}px`}; ${m.Y > 820 ? `bottom:${1080 - m.Y + 30}px` : `top:${m.Y + 30}px`}" data-m="${izq ? 'right' : 'left'}" data-s="${i + 1}" data-at="1" ${out}>${md(m.t)}</div>`;
+        }).join('')}`;
+      },
+    },
+
     hitos: {
       nombre: 'Línea de tiempo (hitos)', pasos: 'uno',
       campos: [['kicker', 'text', 'Antetítulo'], ['titulo', 'area', 'Título'], ['hitos', 'pairs', 'Hitos: "fecha | qué pasó" por línea']],
